@@ -2,10 +2,10 @@
 const validator = (req,res,next)=>{
   const  inputName = req.query.name
   console.log(inputName);
-    if ( inputName){
+    if (isNaN(inputName)){
          next();
     } else  {
-        next("there is no query input");
+        next("the input is empty or not a string");
     }
    
 }
