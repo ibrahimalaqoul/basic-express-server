@@ -1,10 +1,12 @@
 'use strict';
-const server = require('../scr/server');
-const supertest = require('supertest');
-const request = supertest(server.app);
-describe ('testing server',()=>{
-    it('testing output type of',async()=>{
-     const  response = await request.get('/person?name=ibrahim')
-    expect(typeof response.body).toEqual('object')
+const logger = require('../scr/middleware/logger.js');
+
+describe('second test',()=>{
+    let req ={};
+    let res = {};
+    let next = jest.fn();
+    it('test next',()=>{
+        logger(req,res,next)
+        expect(next).toHaveBeenCalled();
     })
 })

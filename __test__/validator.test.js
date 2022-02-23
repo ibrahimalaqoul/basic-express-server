@@ -11,6 +11,9 @@ describe ('testing validator middleware',()=>{
         const response = await request.get('/person?name=string')
         expect(response.status).toEqual(200);
     })
-    
+    it('testing output type of',async()=>{
+        const  response = await request.get('/person?name=ibrahim')
+       expect(typeof response.body).toEqual('object')
+       })
 })
 
