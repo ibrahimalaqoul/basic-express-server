@@ -5,7 +5,7 @@ const validator = (req,res,next)=>{
     if (inputName){
          next();
     } else  {
-        next("the input is empty or not a string");
+        next("the input is empty ");
     }
    
 }
